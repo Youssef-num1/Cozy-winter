@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101e36">
+<title>Fully Colored Pages | A Winter Collection</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #101e36;
+    --deep-navy: #091426;
+    --gold: #c6a15b;
+    --light-gold: #f2dfac;
+    --cream: #f8f5ee;
+    --muted: #777b83;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 35px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+
+    background:
+        radial-gradient(circle at 5% 10%, rgba(198,161,91,.13), transparent 28%),
+        radial-gradient(circle at 95% 90%, rgba(35,62,91,.12), transparent 30%),
+        var(--cream);
+}
+
+/* Main frame */
+
+.page {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 680px;
+    padding: 65px 65px 45px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(135deg, #fffdf8, #f5f0e6);
+
+    border: 1px solid rgba(198,161,91,.55);
+
+    box-shadow:
+        0 30px 90px rgba(23,34,52,.13),
+        inset 0 0 0 8px rgba(198,161,91,.07);
+}
+
+/* Fine decorative border */
+
+.page::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    border: 1px solid rgba(198,161,91,.35);
+    pointer-events: none;
+}
+
+.page::after {
+    content: "✦";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 20px;
+    opacity: .8;
+}
+
+/* Background decoration */
+
+.decoration {
+    position: absolute;
+    color: var(--gold);
+    opacity: .45;
+    pointer-events: none;
+    user-select: none;
+}
+
+.star-one {
+    top: 100px;
+    left: 8%;
+    font-size: 23px;
+}
+
+.star-two {
+    bottom: 110px;
+    right: 7%;
+    font-size: 27px;
+}
+
+.star-three {
+    top: 45%;
+    left: 3%;
+    font-size: 15px;
+}
+
+.star-four {
+    top: 20%;
+    right: 4%;
+    font-size: 17px;
+}
+
+/* Header */
+
+.header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+    color: #a27d3f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+    content: "";
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--navy);
+}
+
+h1 span {
+    display: block;
+    color: #b18a4c;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.subtitle {
+    margin: 20px auto 0;
+    max-width: 520px;
+    color: #72747a;
+    font-size: clamp(14px, 2vw, 17px);
+    line-height: 1.9;
+    letter-spacing: .2px;
+}
+
+/* Content layout */
+
+.content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+/* Artwork presentation */
+
+.artwork {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 470px;
+}
+
+.artwork::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(198,161,91,.22),
+        rgba(198,161,91,.07) 45%,
+        transparent 70%
+    );
+    filter: blur(12px);
+}
+
+.artwork::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 420px;
+    border: 1px solid rgba(198,161,91,.28);
+    border-radius: 180px 180px 8px 8px;
+    transform: rotate(4deg);
+}
+
+/* Book frame */
+
+.book-frame {
+    position: relative;
+    z-index: 2;
+    width: min(78%, 330px);
+    padding: 9px;
+
+    background: linear-gradient(
+        140deg,
+        #f9e9bd,
+        #a9813f,
+        #e8d4a5,
+        #a9813f
+    );
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 25px 55px rgba(12,28,48,.24),
+        0 5px 15px rgba(198,161,91,.2);
+
+    transform: rotate(-2deg);
+    transition: transform .5s ease, box-shadow .5s ease;
+    animation: reveal 1.2s ease both;
+}
+
+.book-frame:hover {
+    transform: rotate(0deg) translateY(-8px);
+    box-shadow:
+        0 35px 65px rgba(12,28,48,.3),
+        0 5px 20px rgba(198,161,91,.3);
+}
+
+.book-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid rgba(255,255,255,.55);
+}
+
+/* Text section */
+
+.message {
+    text-align: left;
+    padding: 15px 0;
+}
+
+.collection-label {
+    display: inline-block;
+    padding: 9px 15px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(198,161,91,.55);
+    color: #96713c;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.message h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 18px;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 2;
+    color: #777a82;
+    max-width: 390px;
+    margin-bottom: 32px;
+}
+
+/* Coming soon */
+
+.coming {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 17px 28px;
+
+    background: linear-gradient(
+        120deg,
+        #142744,
+        #243c5d,
+        #10203a
+    );
+
+    color: var(--light-gold);
+    border: 1px solid #c6a15b;
+    outline: 1px solid rgba(198,161,91,.35);
+    outline-offset: 4px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    box-shadow: 0 10px 25px rgba(16,30,54,.17);
+    transition: .35s ease;
+}
+
+.coming:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(16,30,54,.25);
+}
+
+.coming::before {
+    content: "✦";
+    color: var(--gold);
+}
+
+/* Footer */
+
+.footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 45px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(198,161,91,.3);
+
+    color: #929198;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: .4px;
+}
+
+.footer span {
+    color: #af8b4e;
+}
+
+/* Animation */
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px) rotate(-2deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 14px 10px;
+    }
+
+    .page {
+        padding: 55px 24px 30px;
+    }
+
+    .header {
+        margin-bottom: 15px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .message {
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .artwork {
+        min-height: 390px;
+    }
+
+    .book-frame {
+        width: min(70%, 290px);
+    }
+
+    .artwork::after {
+        height: 350px;
+        width: 270px;
+    }
+
+    .artwork::before {
+        width: 270px;
+        height: 270px;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    .page {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    .artwork {
+        min-height: 340px;
+    }
+
+    .book-frame {
+        width: 76%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+    <div class="decoration star-one">✧</div>
+    <div class="decoration star-two">✦</div>
+    <div class="decoration star-three">✧</div>
+    <div class="decoration star-four">✦</div>
+
+    <header class="header">
+
+        <div class="eyebrow">
+            THE WINTER COLLECTION
+        </div>
+
+        <h1>
+            FULLY COLORED
+            <span>PAGES</span>
+        </h1>
+
+        <p class="subtitle">
+            Get Ready for a World of Beautiful Colors!
+        </p>
+
+    </header>
+
+    <section class="content">
+
+        <div class="artwork">
+
+            <div class="book-frame">
+                <img
+                    src="book.png"
+                    alt="Winter Coloring Book Cover"
+                >
+            </div>
+
+        </div>
+
+        <div class="message">
+
+            <div class="collection-label">
+                A MAGICAL NEW COLLECTION
+            </div>
+
+            <h2>
+                Let Your Imagination
+                Bloom in Every Color.
+            </h2>
+
+            <p class="description">
+                Discover a beautiful world of creativity,
+                magical winter scenes, and unforgettable
+                coloring moments. A special experience
+                is coming your way.
+            </p>
+
+            <div class="coming">
+                COMING SOON
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        A Beautiful New Coloring Experience Is
+        <span>On Its Way!</span>
+    </footer>
+
+</main>
+
+</body>
+</html>
